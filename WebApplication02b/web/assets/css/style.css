@@ -1,0 +1,96 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : May 16, 2025, 10:46:18 AM
+    Author     : Tung Tung
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    color: orangered;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: black;
+}
+
+.tittle {
+    text-align: center;
+    margin: 20px;
+}
+
+.main {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid burlywood;
+    width: 300px;
+    height: auto;
+    padding: 30px;
+    border-radius: 30px;
+    background-color: white;
+}
+
+.login-required {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    input {
+        height: 30px;
+        border-radius: 20px;
+        padding: 0 10px;
+    }
+}
+
+.personal-info {
+    #male {
+        margin-bottom: 50px;
+    }
+    .info-choose {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+.chooses {
+    margin-bottom: 20px;
+}
+
+.chooses select {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #d1c4e9;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s ease;
+    width: calc(100% - 20px);  /* Điều chỉnh chiều rộng */
+    box-sizing: border-box;
+}
+
+.foot-btn {
+    text-align: center;
+}
+
+.foot-btn input[type="submit"],
+.foot-btn input[type="reset"],
+.foot-btn input[type="button"] {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    background-color: orangered; /* Màu tím đậm */
+    color: white;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Thêm transform */
+    width: auto; /* Để nút có chiều rộng tự động */
+}
