@@ -1,0 +1,211 @@
+/* Thiết lập chung cho toàn trang */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #E0F7FA, #F5FBFB); /* Nền gradient pastel xanh nhạt */
+    color: #333;
+    line-height: 1.6;
+    box-sizing: border-box;
+    
+    /* Thiết lập Flexbox cho body để nó kiểm soát bố cục chính */
+    display: flex;
+    flex-direction: column; /* Xếp các phần tử con theo chiều dọc: Header, Main Content, Footer */
+    min-height: 100vh; /* Đảm bảo body chiếm toàn bộ chiều cao của viewport */
+}
+
+/* Phần nội dung chính giữa (chứa form đăng nhập) */
+.main-login-content {
+    flex-grow: 1; /* Cho phép phần này giãn nở để chiếm toàn bộ không gian còn lại */
+    display: flex; /* Dùng Flexbox bên trong để căn giữa form-container */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    padding: 20px; /* Thêm padding xung quanh để form không bị dính sát mép */
+    box-sizing: border-box;
+}
+
+/* Container chính của form đăng nhập */
+.form-container {
+    background-color: #ffffff;
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 450px;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Hiệu ứng gradient phía trên form */
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to right, #B2EBF2, #E0F7FA); /* Gradient xanh pastel */
+    border-radius: 12px 12px 0 0;
+    z-index: -1; /* Đặt phía sau nội dung để không che chữ */
+}
+
+.form-container h2 {
+    color: #4682B4; /* Xanh thép */
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Kiểu dáng form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 1em;
+    text-align: left;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 24px); /* Trừ padding */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #B2EBF2; /* Xanh ngọc nhạt */
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #f8fcfc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #4682B4; /* Xanh thép */
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(70, 130, 180, 0.2);
+}
+
+input[type="submit"] {
+    background: linear-gradient(to right, #64B5F6, #42A5F5); /* Gradient xanh dương */
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 100%;
+    align-self: center;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to right, #42A5F5, #64B5F6);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Thông báo lỗi */
+span.err {
+    color: #D32F2F; /* Đỏ đậm */
+    font-weight: 500;
+    font-size: 0.9em;
+    display: block;
+    margin-top: -15px; /* Kéo lên gần input */
+    margin-bottom: 15px;
+    text-align: left;
+    width: 100%;
+}
+
+span.err:empty { /* Ẩn nếu không có lỗi */
+    margin: 0;
+    height: 0;
+}
+
+span.err[style*="color: red;"] { /* Lỗi tổng quát từ requestScope */
+    background-color: #FFEBEE;
+    border-left: 5px solid #D32F2F;
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    text-align: left;
+    width: calc(100% - 30px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main-login-content {
+        padding: 15px;
+    }
+    .form-container {
+        margin: 0 15px;
+        padding: 40px 30px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        max-width: 90%;
+    }
+
+    .form-container h2 {
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 10px;
+        margin-bottom: 15px;
+        width: calc(100% - 20px);
+    }
+
+    input[type="submit"] {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    span.err {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-login-content {
+        padding: 10px;
+    }
+    .form-container {
+        margin: 0 10px;
+        padding: 30px 25px;
+        border-radius: 8px;
+    }
+    .form-container h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    input[type="text"],
+    input[type="password"] {
+        padding: 8px;
+        margin-bottom: 12px;
+    }
+    input[type="submit"] {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+}

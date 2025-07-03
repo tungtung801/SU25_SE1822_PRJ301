@@ -1,0 +1,249 @@
+/* Thiết lập chung cho toàn trang */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font hiện đại hơn */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #E0F7FA, #F5FBFB); /* Màu nền gradient pastel xanh nhạt */
+    color: #333;
+    line-height: 1.6;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 30px auto; /* Tăng khoảng cách trên dưới */
+    background-color: #fff;
+    border-radius: 12px; /* Bo góc nhiều hơn */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Shadow tinh tế hơn */
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out; /* Thêm transition cho hiệu ứng */
+}
+
+.main:hover {
+    transform: translateY(-5px); /* Hiệu ứng nhấc nhẹ khi hover vào khối chính */
+}
+
+/* Phần Header */
+/* Phần này sẽ được điều khiển bởi styleHeader.css, đảm bảo sự đồng bộ */
+/* Nếu bạn muốn header của welcome.jsp đồng bộ với styleHeader.css,
+   hãy đảm bảo file styleHeader.css được link sau styleWelcome.css
+   trong trang JSP chính (ví dụ: welcome.jsp) */
+.header {
+    /* Background và border-bottom sẽ được override bởi styleHeader.css */
+    /* background: linear-gradient(to right, #B2EBF2, #E0F7FA); */
+    color: white; /* Màu chữ trắng cho phần header từ styleHeader.css */
+    padding: 20px 30px;
+    text-align: center;
+    /* box-shadow và border-bottom cũng được override */
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+    /* border-bottom: 5px solid #80DEEA; */
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.2em;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Shadow nhẹ hơn */
+}
+
+/* Phần nội dung chính */
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.show, .view-by-category {
+    flex: 1;
+    min-width: 45%;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06); /* Shadow nhẹ nhàng hơn */
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #e0f0f5; /* Viền màu xanh nhạt hơn */
+}
+
+.show:hover, .view-by-category:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Shadow sâu hơn nhưng vẫn nhẹ nhàng */
+}
+
+.show h3, .view-by-category h3 {
+    color: #4682B4; /* Màu xanh thép, đồng bộ với info h2 trong header */
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #80DEEA; /* Màu viền dưới xanh ngọc, đồng bộ với header border-bottom */
+    padding-bottom: 12px;
+    font-size: 1.6em;
+    text-align: center;
+}
+
+/* Kiểu dáng bảng */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03); /* Shadow nhẹ nhàng */
+}
+
+table th, table td {
+    border: none;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0f0f5; /* Viền xanh nhạt */
+}
+
+table th {
+    background-color: #E0F7FA; /* Màu nền header bảng xanh ngọc nhạt */
+    color: #2F4F4F; /* Màu chữ xanh đậm như header của welcome */
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table tr:nth-child(even) {
+    background-color: #F8FDFD; /* Màu nền xen kẽ siêu nhạt */
+}
+
+table tr:hover {
+    background-color: #F0FCFC; /* Hiệu ứng hover mềm mại hơn, màu xanh siêu nhạt */
+    cursor: pointer;
+}
+
+/* Kiểu dáng form và select box (áp dụng cho các form nhỏ trong welcome.jsp) */
+form {
+    margin-bottom: 25px;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #B2EBF2; /* Viền xanh ngọc nhạt */
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1.05em;
+    background-color: white;
+    cursor: pointer;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%232F4F4F%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13%205.7L146.2%20202.7%2018.3%2075.1a17.6%2017.6%200%200%200-25.3%2024.5l137.9%20131.5c.6.5%201.2%201%201.9%201.4l.4.4c8.4%207.9%2020.9%207.9%2029.3%200l137.9-131.5a17.6%2017.6%200%200%200-13-29.2z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow màu xanh đậm */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+select:focus {
+    border-color: #4682B4; /* Xanh thép khi focus */
+    outline: none;
+    box-shadow: 0 0 8px rgba(70, 130, 180, 0.4); /* Shadow xanh khi focus */
+}
+
+input[type="submit"] {
+    background: linear-gradient(to right, #64B5F6, #42A5F5); /* Gradient xanh dương */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to right, #42A5F5, #64B5F6); /* Đổi gradient khi hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Các thông báo lỗi */
+p {
+    margin-top: 10px;
+}
+
+p[style*="color: red;"] {
+    color: #D32F2F !important;
+    font-weight: 500;
+    font-size: 0.95em;
+    background-color: #FFEBEE;
+    border-left: 5px solid #D32F2F;
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+/* Phần Footer */
+.footer {
+    background-color: #607D8B; /* Màu nền footer xanh xám đậm */
+    color: #E0F2F7; /* Màu chữ sáng hơn */
+    text-align: center;
+    padding: 20px 30px;
+    margin-top: 30px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+}
+
+/* Responsive design cho màn hình nhỏ hơn */
+@media (max-width: 992px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .show, .view-by-category {
+        min-width: 90%;
+        margin-bottom: 25px;
+        padding: 20px;
+    }
+
+    .main {
+        margin: 20px auto;
+        border-radius: 10px;
+    }
+
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    table th, table td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main {
+        margin: 10px;
+        border-radius: 8px;
+    }
+    .header {
+        padding: 15px 20px;
+    }
+    .header h1 {
+        font-size: 1.5em;
+    }
+    .main-content {
+        padding: 15px;
+        gap: 25px;
+    }
+    .show, .view-by-category {
+        padding: 18px;
+    }
+    select, input[type="submit"] {
+        padding: 10px;
+        font-size: 1em;
+    }
+    table th, table td {
+        font-size: 0.85em;
+    }
+}

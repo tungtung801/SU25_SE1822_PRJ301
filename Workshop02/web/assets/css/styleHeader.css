@@ -1,0 +1,137 @@
+/* Container chính của header */
+.header-container {
+    background: linear-gradient(to right, #B2EBF2, #E0F7FA); /* Xanh ngọc nhạt đến xanh da trời nhạt */
+    color: #2F4F4F; /* Màu chữ xanh đậm để dễ đọc */
+    padding: 20px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    border-bottom: 5px solid #80DEEA; /* Đường viền dưới xanh ngọc đậm hơn */
+    flex-wrap: wrap;
+    min-height: 100px;
+}
+
+/* Phần bên trái: Exam Portal */
+.welcome {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.welcome p {
+    margin: 0;
+    font-size: 3.2em;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.15); /* Shadow nhẹ nhàng hơn */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Phần bên phải: Thông tin người dùng */
+.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-left: 15px;
+}
+
+.info h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #4682B4; /* Màu xanh thép */
+}
+
+.info h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #6A5ACD; /* Màu tím nhạt */
+}
+
+/* Nút Logout */
+.info a {
+    display: inline-block;
+    background-color: #E57373; /* Màu đỏ hồng pastel */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.info a:hover {
+    background-color: #EF5350; /* Đỏ đậm hơn khi hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Responsive design (giữ nguyên như phiên bản trước) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        padding: 20px;
+        min-height: unset;
+    }
+
+    .welcome, .info {
+        flex: unset;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .welcome p {
+        font-size: 2.5em;
+        letter-spacing: 2px;
+        white-space: normal;
+    }
+
+    .info {
+        align-items: center;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .info h2 {
+        font-size: 1.3em;
+    }
+    .info h3 {
+        font-size: 1em;
+    }
+    .info a {
+        padding: 8px 18px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-container {
+        padding: 15px;
+    }
+    .welcome p {
+        font-size: 2em;
+        letter-spacing: 1px;
+    }
+    .info h2 {
+        font-size: 1.1em;
+    }
+    .info h3 {
+        font-size: 0.9em;
+    }
+    .info a {
+        padding: 7px 16px;
+        font-size: 0.85em;
+    }
+}

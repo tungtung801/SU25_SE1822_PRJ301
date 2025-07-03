@@ -1,0 +1,220 @@
+/* Thiết lập chung cho toàn trang */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font hiện đại */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #E0F7FA, #F5FBFB); /* Nền gradient pastel xanh nhạt, đồng bộ với welcome.jsp */
+    color: #333;
+    line-height: 1.6;
+    display: flex; /* Dùng flexbox để căn giữa nội dung */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    min-height: 100vh; /* Đảm bảo chiều cao tối thiểu là toàn bộ viewport */
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px; /* Tăng padding */
+    border-radius: 12px; /* Bo góc nhiều hơn */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Shadow tinh tế hơn, đồng bộ welcome.jsp */
+    width: 100%;
+    max-width: 600px; /* Tăng nhẹ chiều rộng tối đa */
+    transition: transform 0.3s ease-in-out; /* Thêm transition */
+    text-align: center; /* Căn giữa các khối bên trong container */
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Hiệu ứng nhấc nhẹ khi hover */
+}
+
+h2 {
+    color: #4682B4; /* Màu xanh thép, đồng bộ với tiêu đề trong welcome.jsp */
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 600;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #80DEEA; /* Đường viền dưới xanh ngọc, đồng bộ welcome.jsp */
+    text-align: center;
+}
+
+/* Container cho form và nút back */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa nội dung trong form-container */
+    width: 100%;
+}
+
+/* Kiểu dáng form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Căn lề trái cho label và input */
+    width: 90%; /* Giảm chiều rộng form một chút so với container */
+    max-width: 450px; /* Giới hạn chiều rộng cho form */
+    margin: 0 auto; /* Căn giữa form */
+}
+
+p strong {
+    color: #4682B4; /* Màu xanh thép, đồng bộ với các tiêu đề chính */
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #E3F2FD; /* Nền xanh nhạt hơn cho tên category */
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); /* Shadow nhẹ hơn */
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 1em;
+    text-align: left;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: calc(100% - 24px); /* Tính toán chiều rộng để trừ đi padding */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #B2EBF2; /* Viền xanh ngọc nhạt, đồng bộ select welcome.jsp */
+    border-radius: 8px; /* Bo góc như welcome.jsp */
+    font-size: 1em;
+    background-color: #f8fcfc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #4682B4; /* Xanh thép khi focus, đồng bộ select welcome.jsp */
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(70, 130, 180, 0.2); /* Shadow xanh vòng quanh tương tự welcome.jsp */
+}
+
+input[type="submit"] {
+    background: linear-gradient(to right, #64B5F6, #42A5F5); /* Gradient xanh dương, đồng bộ nút submit welcome.jsp */
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px; /* Bo góc như welcome.jsp */
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: auto;
+    align-self: center; /* Căn giữa nút submit */
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to right, #42A5F5, #64B5F6); /* Đổi gradient khi hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Thông báo lỗi */
+p[style*="color: red;"] {
+    color: #D32F2F !important;
+    font-weight: 500;
+    font-size: 0.95em;
+    background-color: #FFEBEE;
+    border-left: 5px solid #D32F2F;
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-bottom: 20px; /* Thêm margin-bottom để tách khỏi nút */
+    align-self: center;
+    width: calc(90% - 30px); /* Điều chỉnh chiều rộng theo form */
+    text-align: left;
+}
+
+/* Nút Back */
+.form-btn {
+    margin-top: 30px; /* Khoảng cách trên nút back */
+    width: 100%;
+    text-align: center; /* Căn giữa nút back */
+}
+
+a {
+    display: inline-block;
+    padding: 12px 25px; /* Padding như nút submit */
+    background-color: #90A4AE; /* Màu xanh xám nhẹ, đồng bộ với footer pastel */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px; /* Bo góc như các element khác */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1em;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+a:hover {
+    background-color: #78909C; /* Xanh xám đậm hơn khi hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    form {
+        width: 100%; /* Cho form chiếm toàn bộ chiều rộng trên mobile */
+        max-width: unset; /* Bỏ giới hạn max-width */
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        padding: 10px;
+        margin-bottom: 15px;
+        width: calc(100% - 20px);
+    }
+
+    input[type="submit"],
+    a {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    p[style*="color: red;"] {
+        width: calc(100% - 30px);
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        margin: 10px;
+        padding: 25px 20px;
+        border-radius: 8px;
+    }
+    h2 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+    input[type="text"],
+    input[type="number"] {
+        padding: 8px;
+        margin-bottom: 12px;
+    }
+    input[type="submit"],
+    a {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+}
